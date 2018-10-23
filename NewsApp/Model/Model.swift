@@ -19,8 +19,25 @@ func loadNews() {
            let path = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0] + "/data.json"
             let urlPath = URL(fileURLWithPath: path)
            try? FileManager.default.copyItem(at:  urlFile!, to: urlPath)
+            parseNews()
             print(urlPath)
+            print(articles.count)
         }
     }
     downloadTask.resume()
+}
+
+func parseNews() {
+    let path = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true)[0] + "/data.json"
+    let urlPath = URL(fileURLWithPath: path)
+    
+    let data = try? Data(contentsOf: urlPath)
+    let rootDictionary = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! Dictionary<String, Any>
+    let array = rootDictionary!["articles"] as! [Dictionary<String, Any>]
+    var returnArray: [Article] = []
+    for dict in array {
+         let  newArticle = Article(dictionary: dict)
+        returnArray.append(newArticle)
+    }
+    articles = returnArray
 }
