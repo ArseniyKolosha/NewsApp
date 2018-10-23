@@ -66,6 +66,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Mn9-ja-TZ1">
+                                <rect key="frame" x="177" y="208" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfU-qg-eZG">
                                 <rect key="frame" x="35" y="134" width="304" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -97,6 +101,7 @@
                         <viewLayoutGuide key="safeArea" id="6N3-0k-H6I"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Mn9-ja-TZ1" id="2er-6b-daW"/>
                         <outlet property="descriptionLabel" destination="Fd2-Dp-rSG" id="Lt4-iV-k0D"/>
                         <outlet property="imageView" destination="bfU-qg-eZG" id="mqZ-q2-npz"/>
                         <outlet property="titleLabel" destination="RyG-Dh-iCQ" id="4eQ-u1-UFP"/>
