@@ -45,6 +45,21 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToOneNews", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToOneNews" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                (segue.destination as? OneNewsViewController)?.article = articles[indexPath.row]
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
+            
+        }
+        
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
