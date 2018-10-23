@@ -15,7 +15,9 @@ var  urlToData: URL {
     return urlPath
 }
 var articles: [Article] = []
-func loadNews() {
+
+
+func loadNews(completionHandler: (()->Void)?) {
     let url = URL(string: "https://newsapi.org/v2/everything?q=bitcoin&from=2018-09-23&sortBy=publishedAt&apiKey=354d804260494f41a9bc8e180647219c")
     let session = URLSession(configuration: .default)
     let downloadTask = session.downloadTask(with: url!) { (urlFile , responce, error) in
@@ -23,16 +25,14 @@ func loadNews() {
           
            try? FileManager.default.copyItem(at:  urlFile!, to: urlToData)
             parseNews()
-            print(urlToData)
-            print(articles.count)
+            completionHandler?()
         }
     }
     downloadTask.resume()
 }
 
-func parseNews() {
 
-    
+func parseNews() {
     let data = try? Data(contentsOf: urlToData)
     if data == nil {
         return
