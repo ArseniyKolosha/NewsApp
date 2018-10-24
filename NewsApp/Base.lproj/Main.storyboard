@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZfW-Q4-b1X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vNx-pk-Xda">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -56,12 +56,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LM1-gC-b5l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037.5999999999999" y="243.32833583208398"/>
+            <point key="canvasLocation" x="3855.1999999999998" y="243.32833583208398"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="zYh-J8-oj6">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="6DS-7n-hWc" customClass="PageViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="839-Pl-BD2"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uec-t5-sHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4887.1999999999998" y="966.56671664167925"/>
         </scene>
         <!--One News View Controller-->
         <scene sceneID="cH0-lT-SIF">
             <objects>
-                <viewController id="fxT-nJ-zlv" customClass="OneNewsViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="oneNewsSiD" id="fxT-nJ-zlv" customClass="OneNewsViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZlO-zX-9Ym">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,30 +114,73 @@
                         <outlet property="activityIndicator" destination="Mn9-ja-TZ1" id="2er-6b-daW"/>
                         <outlet property="descriptionLabel" destination="Fd2-Dp-rSG" id="Lt4-iV-k0D"/>
                         <outlet property="imageView" destination="bfU-qg-eZG" id="mqZ-q2-npz"/>
+                        <outlet property="openSafariOutlet" destination="5z5-Od-nha" id="psF-cK-smM"/>
                         <outlet property="titleLabel" destination="RyG-Dh-iCQ" id="4eQ-u1-UFP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8P-y7-kS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920.8" y="242.42878560719643"/>
+            <point key="canvasLocation" x="4738.3999999999996" y="242.42878560719643"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dYb-RT-QG6">
+        <!--List-->
+        <scene sceneID="hXY-Br-SfE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZfW-Q4-b1X" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PYw-am-r0S" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List" image="list" id="CzQ-aq-GZA"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qzg-Yf-dds">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xa4-kO-XMW">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="MVS-7T-B7G" kind="relationship" relationship="rootViewController" id="Cdw-HL-1wY"/>
+                        <segue destination="MVS-7T-B7G" kind="relationship" relationship="rootViewController" id="UPO-Ri-XO5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jUS-VM-mBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Okh-F6-FUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98.400000000000006" y="243.32833583208398"/>
+            <point key="canvasLocation" x="2916" y="243.32833583208398"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="bnX-f9-1qT">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vNx-pk-Xda" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GfX-tN-w5X">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="PYw-am-r0S" kind="relationship" relationship="viewControllers" id="Rqf-aq-LXz"/>
+                        <segue destination="1H7-m2-CrC" kind="relationship" relationship="viewControllers" id="0Ij-qc-HUn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B1T-FW-1Kr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1976.8" y="243.32833583208398"/>
+        </scene>
+        <!--Pages-->
+        <scene sceneID="G3f-6i-B1w">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1H7-m2-CrC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pages" image="book" id="cgx-OE-S6h"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ds5-oZ-ef3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6DS-7n-hWc" kind="relationship" relationship="rootViewController" id="qIw-Jf-VqC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfT-Wb-Wz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3948" y="966.56671664167925"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book" width="25" height="25"/>
+        <image name="list" width="25" height="25"/>
+    </resources>
 </document>

@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import  SafariServices
 
 class OneNewsViewController: UIViewController {
 
     var article: Article!
+    var index: Int = 0
     
+    @IBOutlet weak var openSafariOutlet: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -32,9 +35,19 @@ class OneNewsViewController: UIViewController {
             }
         }
         
+        if URL(string: article.url) == nil {
+            openSafariOutlet.isEnabled = true
+        }
+        
     }
     
     @IBAction func pushOpenAction(_ sender: UIButton) {
+        if let url =  URL(string: article.url) {
+            let svc = SFSafariViewController(url: url)
+            present(svc, animated: true, completion: nil)
+        }
+        
+        
     }
     
     /*

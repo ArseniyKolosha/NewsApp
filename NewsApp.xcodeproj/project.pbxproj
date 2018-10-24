@@ -15,6 +15,7 @@
 		EA4BAA35217F5E3800854193 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4BAA34217F5E3800854193 /* Model.swift */; };
 		EA4BAA37217FA32500854193 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4BAA36217FA32500854193 /* TableViewController.swift */; };
 		EA4BAA39217FBBA600854193 /* OneNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4BAA38217FBBA600854193 /* OneNewsViewController.swift */; };
+		EA4BAA3B2180485B00854193 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4BAA3A2180485B00854193 /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EA4BAA34217F5E3800854193 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EA4BAA36217FA32500854193 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		EA4BAA38217FBBA600854193 /* OneNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneNewsViewController.swift; sourceTree = "<group>"; };
+		EA4BAA3A2180485B00854193 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				EA4BAA1F217F4C7800854193 /* AppDelegate.swift */,
 				EA4BAA36217FA32500854193 /* TableViewController.swift */,
 				EA4BAA38217FBBA600854193 /* OneNewsViewController.swift */,
+				EA4BAA3A2180485B00854193 /* PageViewController.swift */,
 				EA4BAA23217F4C7800854193 /* Main.storyboard */,
 				EA4BAA26217F4C7900854193 /* Assets.xcassets */,
 				EA4BAA28217F4C7900854193 /* LaunchScreen.storyboard */,
@@ -155,6 +158,7 @@
 				EA4BAA39217FBBA600854193 /* OneNewsViewController.swift in Sources */,
 				EA4BAA20217F4C7800854193 /* AppDelegate.swift in Sources */,
 				EA4BAA33217F4FE200854193 /* Article.swift in Sources */,
+				EA4BAA3B2180485B00854193 /* PageViewController.swift in Sources */,
 				EA4BAA35217F5E3800854193 /* Model.swift in Sources */,
 				EA4BAA37217FA32500854193 /* TableViewController.swift in Sources */,
 			);
