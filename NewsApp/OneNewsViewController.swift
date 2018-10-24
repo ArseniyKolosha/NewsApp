@@ -14,17 +14,18 @@ class OneNewsViewController: UIViewController {
     var article: Article!
     var index: Int = 0
     
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var openSafariOutlet: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
        titleLabel.text = article.title
-       descriptionLabel.text = article.description
+       textView.text = article.description
         
         DispatchQueue.main.async {
             if let url = URL(string: self.article.urlToImage) {
