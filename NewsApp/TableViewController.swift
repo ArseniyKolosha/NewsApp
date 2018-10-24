@@ -10,6 +10,15 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    @IBAction func RefreshControlAction(_ sender: Any) {
+        loadNews {
+            DispatchQueue.main.async {
+                self.refreshControl?.endRefreshing()
+                self.tableView.reloadData()
+            }
+        }
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

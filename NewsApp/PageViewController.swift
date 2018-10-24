@@ -10,6 +10,21 @@ import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
 
+    @IBAction func refreshAction(_ sender: Any) {
+        loadNews {
+            /*
+            DispatchQueue.main.async {
+                self.refreshControl?.endRefreshing()
+                self.tableView.reloadData()
+            }*/
+            DispatchQueue.main.async {
+                self.dataSource = nil
+                self.dataSource = self
+            }
+        }
+ 
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
